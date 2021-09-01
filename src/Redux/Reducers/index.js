@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
+import Products from "./productsReducer";
 import Users from "./usersReducer";
-import Weather from "./weatherReducer";
 
 const rootReducer = combineReducers({
     Users,
-    Weather
+    Products,
 })
 
 export default rootReducer;

@@ -8,10 +8,10 @@ import {
 const initialState = {
   users: [],
   token: localStorage.getItem("token"),
-  _id: localStorage.getItem("_id"),
-  username: localStorage.getItem("name"),
-  email: localStorage.getItem("email"),
-  city: localStorage.getItem("city"),
+  // _id: localStorage.getItem("_id"),
+  // username: localStorage.getItem("name"),
+  // email: localStorage.getItem("email"),
+  // city: localStorage.getItem("city"),
   loglist: [],
 };
 
@@ -26,10 +26,10 @@ const Users = (state = initialState, action) => {
       return {
         ...state,
         token: action.payload.token,
-        _id: action.payload._id,
-        username: action.payload.name,
-        email: action.payload.email,
-        city: action.payload.city,
+        // _id: action.payload._id,
+        // username: action.payload.name,
+        // email: action.payload.email,
+        // city: action.payload.city,
       };
     case RESET_LOGIN_USER:
       return {

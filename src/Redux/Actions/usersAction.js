@@ -11,10 +11,10 @@ export const resetLoginUser = () => ({
 
 export const setLoginUser = (payload) => {
   localStorage.setItem("token", payload.token);
-  localStorage.setItem("_id", payload._id);
-  localStorage.setItem("name", payload.name);
-  localStorage.setItem("email", payload.email);
-  localStorage.setItem("city", payload.city);
+  // localStorage.setItem("_id", payload._id);
+  // localStorage.setItem("name", payload.name);
+  // localStorage.setItem("email", payload.email);
+  // localStorage.setItem("city", payload.city);
   return { type: SET_LOGIN_USER, payload };
 };
 

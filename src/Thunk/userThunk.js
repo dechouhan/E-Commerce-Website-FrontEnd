@@ -15,6 +15,7 @@ export const loginUser = (data) => async (dispatch) => {
   try {
     console.log(data)
     const res = await UserService.login(data);
+    console.log(res)
     dispatch(setLoginUser(res.data));
   } catch (err) {
     alert(err.message)
