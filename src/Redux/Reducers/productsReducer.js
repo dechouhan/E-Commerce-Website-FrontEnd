@@ -1,10 +1,16 @@
-import { ADD_TO_CART, FETCH_PRODUCTS, FETCH_PRODUCT_CATEGORY, RESET_SHOW_PRODUCT_DETAILS, SHOW_PRODUCT_DETAILS } from "../Actions";
+import {
+  ADD_TO_CART,
+  FETCH_PRODUCTS,
+  FETCH_PRODUCT_CATEGORY,
+  RESET_SHOW_PRODUCT_DETAILS,
+  SHOW_PRODUCT_DETAILS,
+} from "../Actions";
 
 const initialState = {
   products: [],
-  productCategory:[],
-  showProductDetails:{},
-  addToCart:[],
+  productCategory: [],
+  showProductDetails: {},
+  addToCart: [],
 };
 
 const Products = (state = initialState, action) => {
@@ -15,25 +21,25 @@ const Products = (state = initialState, action) => {
         products: action.payload,
       };
     case FETCH_PRODUCT_CATEGORY:
-        return {
-            ...state,
-            productCategory:action.payload,
-        }
+      return {
+        ...state,
+        productCategory: action.payload,
+      };
     case SHOW_PRODUCT_DETAILS:
-        return {
-            ...state,
-            showProductDetails:action.payload,
-        }
+      return {
+        ...state,
+        showProductDetails: action.payload,
+      };
     case RESET_SHOW_PRODUCT_DETAILS:
-        return {
-            ...state,
-            showProductDetails:{}
-        }
+      return {
+        ...state,
+        showProductDetails: {},
+      };
     case ADD_TO_CART:
-        return {
-            ...state,
-            addToCart:action.payload
-        }
+      return {
+        ...state,
+        addToCart: action.payload,
+      };
     default:
       return state;
   }

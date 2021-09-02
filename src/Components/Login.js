@@ -5,8 +5,8 @@ import { useHistory, useParams } from "react-router-dom";
 import { loginUser } from "../Thunk/userThunk";
 
 export default function Signup() {
-  const history = useHistory()
-  const {redirectTo}=useParams()
+  const history = useHistory();
+  const { redirectTo } = useParams();
   const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
@@ -18,7 +18,7 @@ export default function Signup() {
         })
       );
       if (redirectTo) {
-        history.push(redirectTo)
+        history.push(redirectTo);
       }
     } else {
       alert("invlid input");
@@ -34,7 +34,11 @@ export default function Signup() {
         <Form onSubmit={submitHandler}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Username</Form.Label>
-            <Form.Control type="text" placeholder="Enter username" name="username" />
+            <Form.Control
+              type="text"
+              placeholder="Enter username"
+              name="username"
+            />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicPassword">

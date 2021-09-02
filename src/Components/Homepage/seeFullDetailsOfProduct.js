@@ -24,13 +24,30 @@ export default function SeeProductDetails() {
         addToCart({
           userId: 1,
           date: new Date(),
-          product: [{ productId: ProductDetails.id, quantity: 1 }],
+          products: [{ productId: ProductDetails.id, quantity: 1 }],
         })
       );
+      alert("Product Added in Cart");
+      history.push("homepage")
     } else {
       history.push(`/login?redirectTo=${lastLocation.pathname}`);
     }
   };
+  const buyNowFunc = ()=>{
+    if (token) {
+      dispatch(
+        addToCart({
+          userId: 1,
+          date: new Date(),
+          product: [{ productId: ProductDetails.id, quantity: 1 }],
+        })
+      );
+      alert("Product Added in Cart");
+      history.push("/shoppingcart")
+    } else {
+      history.push(`/login?redirectTo=${lastLocation.pathname}`);
+    }
+  }
 
   return (
     <div>
@@ -47,7 +64,7 @@ export default function SeeProductDetails() {
             </Button>
             <br />
             <br />
-            <Button variant="warning">Buy Now</Button>
+            <Button variant="warning" onClick={()=>buyNowFunc()}>Buy Now</Button>
             <Card.Text style={{ textAlign: "left" }}>
               <br />
               <b>Description-</b>
@@ -58,7 +75,7 @@ export default function SeeProductDetails() {
               <br />
               <b>Rating-</b>
               <br />
-              <b>Rate-</b>10 out of {ProductDetails.rating.rate}
+              <b>Rate-</b> 5 out of {ProductDetails.rating.rate}
               <br />
               <b>Count-</b>
               {ProductDetails.rating.count}

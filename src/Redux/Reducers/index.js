@@ -3,8 +3,8 @@ import Products from "./productsReducer";
 import Users from "./usersReducer";
 
 const rootReducer = combineReducers({
-    Users,
-    Products,
-})
+  Users,
+  Products,
+});
 
 export default rootReducer;

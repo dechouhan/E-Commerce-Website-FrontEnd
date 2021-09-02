@@ -1,7 +1,7 @@
+//Users
 export const SIGNUP_USER = "SIGNUP_USER";
 export const SET_LOGIN_USER = "SET_LOGIN_USER";
 export const RESET_LOGIN_USER = "RESET_LOGIN_USER";
-export const SHOW_LOG = "SHOW_LOG";
 
 //Products
 export const FETCH_PRODUCTS = "FETCH_PRODUCTS";

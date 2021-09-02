@@ -1,4 +1,4 @@
-import { setLoginUser, showLogUserAction } from "../Redux/Actions/usersAction";
+import { setLoginUser } from "../Redux/Actions/usersAction";
 import { signupUserAction } from "../Redux/Actions/usersAction";
 import UserService from "../Services/UserService";
 
@@ -13,20 +13,9 @@ export const signupUser = (data) => async (dispatch) => {
 
 export const loginUser = (data) => async (dispatch) => {
   try {
-    console.log(data)
     const res = await UserService.login(data);
-    console.log(res)
     dispatch(setLoginUser(res.data));
   } catch (err) {
-    alert(err.message)
-  }
-};
-
-export const showLogUser = (token) => async (dispatch) => {
-  try {
-    const res = await UserService.getshowLogUser(token);
-    dispatch(showLogUserAction(res.data));
-  } catch (err) {
-    alert(err);
+    alert(err.message);
   }
 };

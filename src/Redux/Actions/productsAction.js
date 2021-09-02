@@ -1,4 +1,10 @@
-import { ADD_TO_CART, FETCH_PRODUCTS, FETCH_PRODUCT_CATEGORY, RESET_SHOW_PRODUCT_DETAILS, SHOW_PRODUCT_DETAILS } from ".";
+import {
+  ADD_TO_CART,
+  FETCH_PRODUCTS,
+  FETCH_PRODUCT_CATEGORY,
+  RESET_SHOW_PRODUCT_DETAILS,
+  SHOW_PRODUCT_DETAILS,
+} from ".";
 
 export const fetchProductsAction = (data) => ({
   type: FETCH_PRODUCTS,
@@ -15,10 +21,10 @@ export const showProductDetailsAction = (data) => ({
   payload: data,
 });
 export const resetshowProductDetailsAction = () => ({
-    type: RESET_SHOW_PRODUCT_DETAILS,
-  });
+  type: RESET_SHOW_PRODUCT_DETAILS,
+});
 
-export const addCartAction = (data) =>({
-    type:ADD_TO_CART,
-    payload:data,
-})
+export const addCartAction = (data) => ({
+  type: ADD_TO_CART,
+  payload: data,
+});
