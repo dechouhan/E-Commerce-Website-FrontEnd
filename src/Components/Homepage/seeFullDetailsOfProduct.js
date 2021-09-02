@@ -8,6 +8,7 @@ export default function SeeProductDetails() {
   const history = useHistory();
   const dispatch = useDispatch();
   const lastLocation = useLocation();
+  console.log(lastLocation);
   const ProductDetails = useSelector(
     (state) => state.Products.showProductDetails
   );
@@ -28,12 +29,12 @@ export default function SeeProductDetails() {
         })
       );
       alert("Product Added in Cart");
-      history.push("homepage")
+      history.push("homepage");
     } else {
-      history.push(`/login?redirectTo=${lastLocation.pathname}`);
+      history.push(`/login?redirectTo=${lastLocation}`);
     }
   };
-  const buyNowFunc = ()=>{
+  const buyNowFunc = () => {
     if (token) {
       dispatch(
         addToCart({
@@ -43,11 +44,11 @@ export default function SeeProductDetails() {
         })
       );
       alert("Product Added in Cart");
-      history.push("/shoppingcart")
+      history.push("/shoppingcart");
     } else {
-      history.push(`/login?redirectTo=${lastLocation.pathname}`);
+      history.push(`/login?redirectTo=${lastLocation}`);
     }
-  }
+  };
 
   return (
     <div>
@@ -64,7 +65,9 @@ export default function SeeProductDetails() {
             </Button>
             <br />
             <br />
-            <Button variant="warning" onClick={()=>buyNowFunc()}>Buy Now</Button>
+            <Button variant="warning" onClick={() => buyNowFunc()}>
+              Buy Now
+            </Button>
             <Card.Text style={{ textAlign: "left" }}>
               <br />
               <b>Description-</b>

@@ -2,6 +2,7 @@ import {
   ADD_TO_CART,
   FETCH_PRODUCTS,
   FETCH_PRODUCT_CATEGORY,
+  RESET_PRODUCTS,
   RESET_SHOW_PRODUCT_DETAILS,
   SHOW_PRODUCT_DETAILS,
 } from ".";
@@ -27,4 +28,8 @@ export const resetshowProductDetailsAction = () => ({
 export const addCartAction = (data) => ({
   type: ADD_TO_CART,
   payload: data,
+});
+
+export const resetProductsAction = () => ({
+  type: RESET_PRODUCTS,
 });

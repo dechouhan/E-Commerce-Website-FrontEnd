@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Form, Button, Container } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { loginUser } from "../Thunk/userThunk";
 
@@ -8,6 +8,16 @@ export default function Signup() {
   const history = useHistory();
   const { redirectTo } = useParams();
   const dispatch = useDispatch();
+  const token = useSelector((state) => state.Users.token);
+  useEffect(() => {
+    if (token) {
+      if (redirectTo) {
+        history.push(redirectTo);
+      } else {
+        history.push("/homepage");
+      }
+    }
+  });
   const submitHandler = (e) => {
     e.preventDefault();
     if (e.target.username.value && e.target.password.value) {
@@ -17,9 +27,6 @@ export default function Signup() {
           password: e.target.password.value,
         })
       );
-      if (redirectTo) {
-        history.push(redirectTo);
-      }
     } else {
       alert("invlid input");
     }

@@ -2,6 +2,7 @@ import {
   ADD_TO_CART,
   FETCH_PRODUCTS,
   FETCH_PRODUCT_CATEGORY,
+  RESET_PRODUCTS,
   RESET_SHOW_PRODUCT_DETAILS,
   SHOW_PRODUCT_DETAILS,
 } from "../Actions";
@@ -39,6 +40,11 @@ const Products = (state = initialState, action) => {
       return {
         ...state,
         addToCart: action.payload,
+      };
+    case RESET_PRODUCTS:
+      return {
+        ...state,
+        products: [],
       };
     default:
       return state;

@@ -62,7 +62,7 @@ function App() {
           />
           <PrivateRoute component={ShoppingCart} exact path="/shoppingcart" />
           <PublicRoute component={Signup} exact path="/signup" />
-          <PublicRoute component={Login} exact path="/login" />
+          <Route component={Login} exact path="/login" />
         </Switch>
       </BrowserRouter>
     </div>

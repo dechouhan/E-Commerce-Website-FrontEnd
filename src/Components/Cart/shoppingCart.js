@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Container, Table, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { resetProductsAction } from "../../Redux/Actions/productsAction";
 import { fetchShoppingCart } from "../../Thunk/productThunk";
 
 export default function ShoppingCart() {
@@ -12,6 +13,7 @@ export default function ShoppingCart() {
   //if we want to get data from api then we will use it code..
   useEffect(() => {
     dispatch(fetchShoppingCart(userId));
+    dispatch(resetProductsAction());
   }, [dispatch]);
   const shoppingCart = useSelector((state) => state.Products.addToCart);
   console.log(shoppingCart);
