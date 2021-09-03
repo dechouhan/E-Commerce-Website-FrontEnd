@@ -16,7 +16,6 @@ export default function ShoppingCart() {
     dispatch(resetProductsAction());
   }, [dispatch]);
   const shoppingCart = useSelector((state) => state.Products.addToCart);
-  console.log(shoppingCart);
   if (shoppingCart.userId) {
     cartItem = shoppingCart.products.map((item) => {
       return (

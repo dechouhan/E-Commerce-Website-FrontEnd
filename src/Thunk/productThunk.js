@@ -35,7 +35,6 @@ export const fetchProducts = (limit, sort, category) => async (dispatch) => {
 export const fetchShoppingCart = (userId) => async (dispatch) => {
   try {
     const res = await ProductService.getShoppingCart(userId);
-    console.log(res.data);
     dispatch(addCartAction(res.data));
   } catch (err) {
     alert(err);

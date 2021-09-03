@@ -8,7 +8,6 @@ export default function SeeProductDetails() {
   const history = useHistory();
   const dispatch = useDispatch();
   const lastLocation = useLocation();
-  console.log(lastLocation);
   const ProductDetails = useSelector(
     (state) => state.Products.showProductDetails
   );
@@ -31,7 +30,7 @@ export default function SeeProductDetails() {
       alert("Product Added in Cart");
       history.push("homepage");
     } else {
-      history.push(`/login?redirectTo=${lastLocation}`);
+      history.push(`/login?redirectTo=${lastLocation.pathname}`);
     }
   };
   const buyNowFunc = () => {
@@ -46,7 +45,7 @@ export default function SeeProductDetails() {
       alert("Product Added in Cart");
       history.push("/shoppingcart");
     } else {
-      history.push(`/login?redirectTo=${lastLocation}`);
+      history.push(`/login?redirectTo=${lastLocation.pathname }`);
     }
   };
 

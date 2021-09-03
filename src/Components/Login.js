@@ -1,12 +1,16 @@
 import React, { useEffect } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { loginUser } from "../Thunk/userThunk";
 
 export default function Signup() {
   const history = useHistory();
-  const { redirectTo } = useParams();
+  function useQuery() {
+    return new URLSearchParams(useLocation().search);
+  }
+  let query = useQuery();
+  let redirectTo = query.get("redirectTo");
   const dispatch = useDispatch();
   const token = useSelector((state) => state.Users.token);
   useEffect(() => {
